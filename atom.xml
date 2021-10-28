@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>kuangtant</title>
+  
+  <subtitle>more confidence</subtitle>
+  <link href="https://kuangtant.gitee.io/atom.xml" rel="self"/>
+  
+  <link href="https://kuangtant.gitee.io/"/>
+  <updated>2021-08-24T16:51:48.000Z</updated>
+  <id>https://kuangtant.gitee.io/</id>
+  
+  <author>
+    <name>kuangtant</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://kuangtant.gitee.io/2021/10/28/hello-world/"/>
+    <id>https://kuangtant.gitee.io/2021/10/28/hello-world/</id>
+    <published>2021-10-28T05:22:11.849Z</published>
+    <updated>2021-08-24T16:51:48.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>简单理解栈溢出</title>
+    <link href="https://kuangtant.gitee.io/2021/10/27/jian-dan-li-jie-zhan-yi-chu/"/>
+    <id>https://kuangtant.gitee.io/2021/10/27/jian-dan-li-jie-zhan-yi-chu/</id>
+    <published>2021-10-27T12:25:54.000Z</published>
+    <updated>2021-10-27T04:23:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;简单理解栈溢出&quot;&gt;&lt;a href=&quot;#简单理解栈溢出&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一招解决Android上Z3的安装问题</title>
+    <link href="https://kuangtant.gitee.io/2021/10/26/yi-zhao-jie-jue-android-shang-z3-de-an-zhuang-wen-ti/"/>
+    <id>https://kuangtant.gitee.io/2021/10/26/yi-zhao-jie-jue-android-shang-z3-de-an-zhuang-wen-ti/</id>
+    <published>2021-10-26T06:49:24.000Z</published>
+    <updated>2021-10-27T04:42:08.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ctf re入门</title>
+    <link href="https://kuangtant.gitee.io/2021/10/08/ctf-ru-men/"/>
+    <id>https://kuangtant.gitee.io/2021/10/08/ctf-ru-men/</id>
+    <published>2021-10-08T15:15:51.000Z</published>
+    <updated>2021-10-09T08:12:48.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;开始&quot;&gt;&lt;a href=&quot;#开始&quot; class=&quot;headerlink&quot; title=&quot;开始&quot;&gt;&lt;/a&gt;开始&lt;/h1&gt;&lt;p&gt;一般来说，我们拿到一个ctf的题，就是为了得到它的flag,为了它，RE做安全的十分努力，百分艰辛，就为了得到它。&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git for windows</title>
+    <link href="https://kuangtant.gitee.io/2021/10/05/git-for-windows/"/>
+    <id>https://kuangtant.gitee.io/2021/10/05/git-for-windows/</id>
+    <published>2021-10-05T07:17:41.000Z</published>
+    <updated>2021-10-09T08:23:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;Git是一个分布式管理的软件，功能十分强大，在windows平台上，在安装的时候，便可以将其配置完毕。本文详细介绍了一下。本文Git</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Git" scheme="https://kuangtant.gitee.io/tags/Git/"/>
+    
+    <category term="Windows" scheme="https://kuangtant.gitee.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言对数组指针的理解</title>
+    <link href="https://kuangtant.gitee.io/2021/09/28/c-yu-yan-dui-shu-zu-zhi-zhen-de-li-jie/"/>
+    <id>https://kuangtant.gitee.io/2021/09/28/c-yu-yan-dui-shu-zu-zhi-zhen-de-li-jie/</id>
+    <published>2021-09-28T01:59:50.000Z</published>
+    <updated>2021-09-28T08:24:14.000Z</updated>
+    
+    
+    <summary type="html">C语言有很多的知识，其中一个就是关于数组指针的问题，对于一些刚学C语言的萌新来说，C语言的数组指针是一个问题。</summary>
+    
+    
+    
+    <category term="C" scheme="https://kuangtant.gitee.io/categories/C/"/>
+    
+    
+    <category term="C" scheme="https://kuangtant.gitee.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>几小时带你学会Python-之-1</title>
+    <link href="https://kuangtant.gitee.io/2021/09/25/ji-xiao-shi-dai-ni-xue-hui-python-zhi-1/"/>
+    <id>https://kuangtant.gitee.io/2021/09/25/ji-xiao-shi-dai-ni-xue-hui-python-zhi-1/</id>
+    <published>2021-09-25T00:42:30.000Z</published>
+    <updated>2021-09-28T06:38:04.000Z</updated>
+    
+    
+    <summary type="html">网络上有许多的语言，那么最容易上手的是什么呢？我认为是Python,用几个小时小白也能学会，而且，Python是一种很好的工具，编写起来十分简单，达到目的的效果快，比如一些的网络安全大赛的解题很多都是使用的Python，大学生，如果平时没事，写写Python脚本，抢抢课，签签到</summary>
+    
+    
+    
+    <category term="Python2" scheme="https://kuangtant.gitee.io/categories/Python2/"/>
+    
+    
+    <category term="Python2" scheme="https://kuangtant.gitee.io/tags/Python2/"/>
+    
+    <category term="Python" scheme="https://kuangtant.gitee.io/tags/Python/"/>
+    
+    <category term="脚本" scheme="https://kuangtant.gitee.io/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+    <category term="语法" scheme="https://kuangtant.gitee.io/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android的java运行方案</title>
+    <link href="https://kuangtant.gitee.io/2021/09/17/android-de-java-yun-xing-fang-an/"/>
+    <id>https://kuangtant.gitee.io/2021/09/17/android-de-java-yun-xing-fang-an/</id>
+    <published>2021-09-17T04:55:26.000Z</published>
+    <updated>2021-10-27T04:42:46.000Z</updated>
+    
+    
+    <summary type="html">java具有可移植的特性，能够被广泛的运用到各大平台，在Windows,Linux,Mac等平台已经常而常之，但是在Android环境运行如何呢？</summary>
+    
+    
+    
+    <category term="Java" scheme="https://kuangtant.gitee.io/categories/Java/"/>
+    
+    
+    <category term="Android" scheme="https://kuangtant.gitee.io/tags/Android/"/>
+    
+    <category term="编译器" scheme="https://kuangtant.gitee.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"/>
+    
+    <category term="Termux" scheme="https://kuangtant.gitee.io/tags/Termux/"/>
+    
+    <category term="Java" scheme="https://kuangtant.gitee.io/tags/Java/"/>
+    
+    <category term="JDK" scheme="https://kuangtant.gitee.io/tags/JDK/"/>
+    
+    <category term="AIDE" scheme="https://kuangtant.gitee.io/tags/AIDE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android平台，C语言的运行</title>
+    <link href="https://kuangtant.gitee.io/2021/09/09/android-ping-tai-c-yu-yan-de-yun-xing/"/>
+    <id>https://kuangtant.gitee.io/2021/09/09/android-ping-tai-c-yu-yan-de-yun-xing/</id>
+    <published>2021-09-09T02:56:52.000Z</published>
+    <updated>2021-09-28T06:22:58.000Z</updated>
+    
+    
+    <summary type="html">Android平台，C语言的运行,下载Termux运行C语言。C语言编译器。</summary>
+    
+    
+    
+    <category term="C" scheme="https://kuangtant.gitee.io/categories/C/"/>
+    
+    
+    <category term="C" scheme="https://kuangtant.gitee.io/tags/C/"/>
+    
+    <category term="Android" scheme="https://kuangtant.gitee.io/tags/Android/"/>
+    
+    <category term="编译器" scheme="https://kuangtant.gitee.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"/>
+    
+    <category term="Termux" scheme="https://kuangtant.gitee.io/tags/Termux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git的详细配置</title>
+    <link href="https://kuangtant.gitee.io/2021/09/02/git-de-xiang-xi-pei-zhi/"/>
+    <id>https://kuangtant.gitee.io/2021/09/02/git-de-xiang-xi-pei-zhi/</id>
+    <published>2021-09-01T16:26:33.000Z</published>
+    <updated>2021-09-28T06:23:28.000Z</updated>
+    
+    
+    <summary type="html">安装好Git后，便可以进行配置了，后面就可以体验它的强大功能了。git config --global user.name,ssh-keygen -t rsa -C &#39;登录邮箱&#39; 在根目录的.ssh目录下会生成id-rsa.pub文件</summary>
+    
+    
+    
+    <category term="Git" scheme="https://kuangtant.gitee.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://kuangtant.gitee.io/tags/Git/"/>
+    
+    <category term="配置" scheme="https://kuangtant.gitee.io/tags/%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="密钥" scheme="https://kuangtant.gitee.io/tags/%E5%AF%86%E9%92%A5/"/>
+    
+    <category term="仓库" scheme="https://kuangtant.gitee.io/tags/%E4%BB%93%E5%BA%93/"/>
+    
+    <category term="gitee" scheme="https://kuangtant.gitee.io/tags/gitee/"/>
+    
+    <category term="github" scheme="https://kuangtant.gitee.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>各平台安装Git</title>
+    <link href="https://kuangtant.gitee.io/2021/08/28/ge-ping-tai-an-zhuang-git/"/>
+    <id>https://kuangtant.gitee.io/2021/08/28/ge-ping-tai-an-zhuang-git/</id>
+    <published>2021-08-28T11:31:13.000Z</published>
+    <updated>2021-09-28T06:21:46.000Z</updated>
+    
+    
+    <summary type="html">git目前是世界上最先进的分布式版本控制系统，能够通过命令代码进行控制，支持对源码资源进行一系列的控制。Linux,Windows,Mac,Android平台安装Git</summary>
+    
+    
+    
+    <category term="Git" scheme="https://kuangtant.gitee.io/categories/Git/"/>
+    
+    
+    <category term="Android" scheme="https://kuangtant.gitee.io/tags/Android/"/>
+    
+    <category term="Git" scheme="https://kuangtant.gitee.io/tags/Git/"/>
+    
+    <category term="gitee" scheme="https://kuangtant.gitee.io/tags/gitee/"/>
+    
+    <category term="github" scheme="https://kuangtant.gitee.io/tags/github/"/>
+    
+    <category term="开源" scheme="https://kuangtant.gitee.io/tags/%E5%BC%80%E6%BA%90/"/>
+    
+    <category term="版本" scheme="https://kuangtant.gitee.io/tags/%E7%89%88%E6%9C%AC/"/>
+    
+    <category term="Linux" scheme="https://kuangtant.gitee.io/tags/Linux/"/>
+    
+    <category term="Windows" scheme="https://kuangtant.gitee.io/tags/Windows/"/>
+    
+    <category term="Mac" scheme="https://kuangtant.gitee.io/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 的进修史</title>
+    <link href="https://kuangtant.gitee.io/2021/08/25/markdown-de-jin-xiu-shi/"/>
+    <id>https://kuangtant.gitee.io/2021/08/25/markdown-de-jin-xiu-shi/</id>
+    <published>2021-08-24T17:14:32.000Z</published>
+    <updated>2021-09-28T06:22:04.000Z</updated>
+    
+    
+    <summary type="html">markdown是一种轻量级的标记语言，在中国各大平台普遍受欢迎，且其编辑的文档可简易的导出为HTML,Word,PDF等多种文档格式，很有学习的必要。Markdown常被用来编写各样的文本,Markdown编辑器有很多</summary>
+    
+    
+    
+    <category term="Markdown" scheme="https://kuangtant.gitee.io/categories/Markdown/"/>
+    
+    
+    <category term="markdown" scheme="https://kuangtant.gitee.io/tags/markdown/"/>
+    
+    <category term="Typora" scheme="https://kuangtant.gitee.io/tags/Typora/"/>
+    
+    <category term="Markdown编辑器" scheme="https://kuangtant.gitee.io/tags/Markdown%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+    <category term="Quiver" scheme="https://kuangtant.gitee.io/tags/Quiver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 发射！！！</title>
+    <link href="https://kuangtant.gitee.io/2021/08/25/hexo-fa-she/"/>
+    <id>https://kuangtant.gitee.io/2021/08/25/hexo-fa-she/</id>
+    <published>2021-08-24T17:14:32.000Z</published>
+    <updated>2021-09-28T06:22:18.000Z</updated>
+    
+    
+    <summary type="html">hexo是一个好的选择，是一个快速、简洁且高效的博客框架,超快速度,Node.js 所带来的超快生成速度,Hexo 支持GitHub Flavored Markdown 的所有功能,一键部署Gitee，GitHub Pages,Heroku平台，安装Hexo</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://kuangtant.gitee.io/categories/Hexo/"/>
+    
+    
+    <category term="Git" scheme="https://kuangtant.gitee.io/tags/Git/"/>
+    
+    <category term="Hexo" scheme="https://kuangtant.gitee.io/tags/Hexo/"/>
+    
+    <category term="博客" scheme="https://kuangtant.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="nodejs" scheme="https://kuangtant.gitee.io/tags/nodejs/"/>
+    
+  </entry>
+  
+</feed>
