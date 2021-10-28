@@ -272,6 +272,8 @@
     
     <category term="Git" scheme="https://kuangtant.gitee.io/tags/Git/"/>
     
+    <category term="Windows" scheme="https://kuangtant.gitee.io/tags/Windows/"/>
+    
     <category term="gitee" scheme="https://kuangtant.gitee.io/tags/gitee/"/>
     
     <category term="github" scheme="https://kuangtant.gitee.io/tags/github/"/>
@@ -281,8 +283,6 @@
     <category term="版本" scheme="https://kuangtant.gitee.io/tags/%E7%89%88%E6%9C%AC/"/>
     
     <category term="Linux" scheme="https://kuangtant.gitee.io/tags/Linux/"/>
-    
-    <category term="Windows" scheme="https://kuangtant.gitee.io/tags/Windows/"/>
     
     <category term="Mac" scheme="https://kuangtant.gitee.io/tags/Mac/"/>
     
