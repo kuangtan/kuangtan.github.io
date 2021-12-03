@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ASCII 转换工具</title>
+      <link href="2021/12/03/ascii-zhuan-huan-gong-ju/"/>
+      <url>2021/12/03/ascii-zhuan-huan-gong-ju/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在日常学习过程中，难免有些进制转换的问题，比如ASCII转2,10，16进制等，就可以使用如下工具</p><iframe style="width:100%; height:260;border:none;text-align:center" allowtransparency="yes" frameborder="0" width="100%" height="1000" src="https://kuangtant.gitee.io/tools/asscii/"></iframe>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python自动android操作</title>
       <link href="2021/11/18/python-zi-dong-android-cao-zuo/"/>
       <url>2021/11/18/python-zi-dong-android-cao-zuo/</url>
