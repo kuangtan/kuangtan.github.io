@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>ASSCII，二进制，十进制，十六进制在线转换</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">进制转换工具</h3>
+        </div>
+        <div class="panel-body">
+
+            <label for="basic-url">文本(包括空格)</label>
+            <div class="input-group">
+                <span class="input-group-addon">文本</span>
+                <input type="text" class="form-control .text">
+                <span class="input-group-addon .copy" data-clipboard-action="copy" data-clipboard-target=".text">清空</span>
+            </div>
+
+            <label for="basic-url">ASCII十进制</label>
+            <div class="input-group">
+                <span class="input-group-addon">十进制</span>
+                <input type="text" class="form-control .ascii">
+                <span class="input-group-addon .copy" data-clipboard-action="copy" data-clipboard-target=".ascii">清空</span>
+            </div>
+
+            <label for="basic-url">ASCII二进制</label>
+            <div class="input-group">
+                <span class="input-group-addon">二进制</span>
+                <input type="text" class="form-control .two">
+                <span class="input-group-addon .copy" data-clipboard-action="copy" data-clipboard-target=".two">清空</span>
+            </div>
+
+            <label for="basic-url">ASCII十六进制</label>
+            <div class="input-group">
+                <span class="input-group-addon .hex">十六进制</span>
+                <input type="text" class="form-control">
+                <span class="input-group-addon .copy" data-clipboard-action="copy" data-clipboard-target=".hex">清空</span>
+            </div>
+
+            <button type="button" class="btn btn-success navbar-btn btn-block">文本转其它</button>
+            <button type="button" class="btn btn-info navbar-btn btn-block">ASCII-十进制转其它</button>
+            <button type="button" class="btn btn-warning navbar-btn btn-block">ASCII-二进制流转其它</button>
+            <button type="button" class="btn btn-danger navbar-btn btn-block">ASCII-16进制转其它</button>
+
+            <div class="alert alert-success" role="alert">
+                <strong>原理：</strong><br>
+                本工具能够对于一些文本进行转换<br>
+                <strong>注意：</strong><br>
+                10,2,16进制 之间用空格隔开
+            </div>
+
+
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"
+                integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+                crossorigin="anonymous"></script>
+  
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+            <script>
+                $(function () {
+                    var v = $('input'),
+                        text = v.eq(0),
+                        assii = v.eq(1),
+                        two = v.eq(2),
+                        hex = v.eq(3),
+                        b = $("button"),
+                        btext = b.eq(0),
+                        bassii = b.eq(1),
+                        btwo = b.eq(2),
+                        bhex = b.eq(3);
+                   
+
+                    function Text_to_assic(val) {
+                        var r = [];
+                        var s=val.split('');
+                        for (var i in s) {    
+                           r.push(s[i].charCodeAt());
+                        }
+                        return r.join(' ');
+                    }
+                    function assic_to_text(val) {
+                        var r = '';
+                        for (var i in val.split(' ')) {
+                            d=val.split(' ')[i]*1;
+                            r += String.fromCodePoint(d);
+                        }
+                        return r;
+                    }
+
+                    function strToBinary(str) {
+                        var result = [];
+                        var list = str.split("");
+                        for (var i = 0; i < list.length; i++) {
+                            if (i != 0) {
+                                result.push(" ");
+                            }
+                            var item = list[i];
+                            var binartStr = item.charCodeAt().toString(2);
+                            result.push(binartStr);
+                        }
+                        return result.join("");
+                    }
+
+
+                    function binaryToStr(str) {
+                        var result = [];
+                        var list = str.split(" ");
+                        for (var i = 0; i < list.length; i++) {
+                            var item = list[i];
+                            var asciiCode = parseInt(item, 2);
+                            var charValue = String.fromCharCode(asciiCode);
+                            result.push(charValue);
+                        }
+                        return result.join("");
+                    }
+                    function strToHexCharCode(str) {
+                        if (str === "")
+                            return "";
+                        var hexCharCode = [];
+                        for (var i = 0; i < str.length; i++) {
+                            hexCharCode.push((str.charCodeAt(i)).toString(16));
+                        }
+                        return hexCharCode.join(" ");
+                    }
+
+                    
+
+                    function hex_to_two(val) {
+                        var r = [];
+                        for (var m in val.split(' ')) {
+                            r.push(parseInt(val.split(' ')[m],16).toString(2));
+                        }
+                        return r.join(' ');
+                    }
+
+
+                    btext.click(function () {
+                        var v = text.val();
+                        assii.val(Text_to_assic(v));
+                        two.val(strToBinary(v));
+                        hex.val(strToHexCharCode(v));
+                    });
+
+
+                    bassii.click(function () {
+                        var v = assii.val();
+                        text.val(assic_to_text(v));
+
+                    });
+                    btwo.click(function () {
+                        var v = two.val();
+                        text.val(binaryToStr(v));
+                        btext.click();
+
+                    });
+                    bhex.click(function () {
+                        var v = hex.val();
+                       two.val(hex_to_two(v))
+                       btwo.click();
+                    });
+
+                $(".copy").click(function(){
+                    $(this).before().val("");
+                });
+
+               
+                });
+            </script>
+
+</body>
+
+</html>
