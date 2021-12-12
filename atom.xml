@@ -6,7 +6,7 @@
   <link href="https://kuangtant.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://kuangtant.gitee.io/"/>
-  <updated>2021-12-03T09:03:46.393Z</updated>
+  <updated>2021-12-12T09:52:02.457Z</updated>
   <id>https://kuangtant.gitee.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android studio生成so文件</title>
+    <link href="https://kuangtant.gitee.io/2021/12/12/android-studio-sheng-cheng-so-wen-jian/"/>
+    <id>https://kuangtant.gitee.io/2021/12/12/android-studio-sheng-cheng-so-wen-jian/</id>
+    <published>2021-12-12T09:46:54.000Z</published>
+    <updated>2021-12-12T09:52:02.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Android-studio生成so文件&quot;&gt;&lt;a href=&quot;#Android-studio生成so文件&quot; class=&quot;headerlink&quot; title=&quot;Android studio生成so文件&quot;&gt;&lt;/a&gt;Android</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Android" scheme="https://kuangtant.gitee.io/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>ASCII 转换工具</title>
