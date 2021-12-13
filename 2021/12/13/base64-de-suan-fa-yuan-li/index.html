@@ -22,7 +22,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Android studio生成so文件 | kuangtant</title>
+  <title>Base64 的算法原理 | kuangtant</title>
 
   
     
@@ -551,7 +551,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/7.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/9.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>
@@ -562,7 +562,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['Android studio生成so文件'],
+              strings: ['Base64 的算法原理'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -587,7 +587,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-12-12</span>
+        <span class="post-time">2021-12-13</span>
       </div>
       
       <div class="post-tags-categories">
@@ -595,8 +595,12 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/Android/" class="">
-              Android
+            <a href="/tags/%E7%AE%97%E6%B3%95/" class="">
+              算法
+            </a>
+          
+            <a href="/tags/%E5%8E%9F%E7%90%86/" class="">
+              原理
             </a>
           
         </div>
@@ -604,95 +608,364 @@
         
       </div>
       <div class="post-content">
-        <h1 id="Android-studio生成so文件"><a href="#Android-studio生成so文件" class="headerlink" title="Android studio生成so文件"></a>Android studio生成so文件</h1><h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>现在，大部分安卓app的开发几乎都是使用java完成，但是，Java在速度和一些功能上可能不如c/c++程序，并且一些好的开源项目是使用c/c++开发完成的，为了使用这一功能，android拓展了jni,提供这一服务。</p>
-<h2 id="二、-NDK"><a href="#二、-NDK" class="headerlink" title="二、 NDK"></a>二、 NDK</h2><h3 id="2-1-理解ndk"><a href="#2-1-理解ndk" class="headerlink" title="2.1 理解ndk"></a>2.1 理解ndk</h3><p>在Android OS上开发应用程序，Google提供了两种开发包：SDK和NDK,Android 平台从一开就已经支持了C/C++了。我们知道Android的SDK主要是基于Java的，所以导致了在用Android SDK进行开发的工程师们都必须使用Java语言。不过，Google从一开始就说明Android也支持JNI编程方式，也就是第三方应用完成可以通过JNI调用自己的C动态度。于是NDK就应运而生了。</p>
-<h3 id="2-2-为何ndk"><a href="#2-2-为何ndk" class="headerlink" title="2.2  为何ndk"></a>2.2  为何ndk</h3><ul>
-<li><p>1、在平台之间移植其应用</p>
-</li>
-<li><p>2、重复使用现在库，或者提供其自己的库重复使用</p>
-</li>
-<li><p>3、在某些情况下提性能，特别是像游戏这种计算密集型应用</p>
-</li>
-<li><p>4、使用第三方库，现在许多第三方库都是由C/C++库编写的，比如Ffmpeg这样库。</p>
-</li>
-<li><p>5、不依赖于Dalvik Java虚拟机的设计</p>
-</li>
-<li><p>6、代码的保护。由于APK的Java层代码很容易被反编译，而C/C++库反编译难度大</p>
-</li>
-</ul>
-<h3 id="2-3-从NDK到so"><a href="#2-3-从NDK到so" class="headerlink" title="2.3 从NDK到so"></a>2.3 从NDK到so</h3><p><img src="1.webp" alt="img"></p>
-<p>从上图这个Android系统框架来看，我们上层通过JNI来调用NDK层的，使用这个工具可以很方便的编写和调试JNI的代码。因为C语言的不跨平台，在Mac系统的下使用NDK编译在Linux下能执行的函数库——so文件。其本质就是一堆C、C++的头文件和实现文件打包成一个库。目前Android系统支持以下七种不用的CPU架构，每一种对应着各自的应用程序二进制接口ABI：(Application Binary Interface)定义了二进制文件(尤其是.so文件)如何运行在相应的系统平台上，从使用的指令集，内存对齐到可用的系统函数库。对应关系如下：</p>
-<blockquote>
-<ul>
-<li>ARMv5——armeabi</li>
-<li>ARMv7 ——armeabi-v7a</li>
-<li>ARMv8——arm64- v8a</li>
-<li>x86——x86</li>
-<li>MIPS ——mips</li>
-<li>MIPS64——mips64</li>
-<li>x86_64——x86_64</li>
-</ul>
-</blockquote>
-<h2 id="三、JNI"><a href="#三、JNI" class="headerlink" title="三、JNI"></a>三、JNI</h2><h3 id="3-1-解释jni"><a href="#3-1-解释jni" class="headerlink" title="3.1 解释jni"></a>3.1 解释jni</h3><p>JNI，全称为Java Native Interface，即Java本地接口，JNI是Java调用Native 语言的一种特性。通过JNI可以使得Java与C/C++机型交互。即可以在Java代码中调用C/C++等语言的代码或者在C/C++代码中调用Java代码。由于JNI是JVM规范的一部分，因此可以将我们写的JNI的程序在任何实现了JNI规范的Java虚拟机中运行。同时，这个特性使我们可以复用以前用C/C++写的大量代码JNI是一种在Java虚拟机机制下的执行代码的标准机制。代码被编写成汇编程序或者C/C++程序，并组装为动态库。也就允许非静态绑定用法。这提供了一个在Java平台上调用C/C++的一种途径，反之亦然。</p>
-<p>PS：<br> 开发JNI程序会受到系统环境限制，因为用C/C++ 语言写出来的代码或模块，编译过程当中要依赖当前操作系统环境所提供的一些库函数，并和本地库链接在一起。而且编译后生成的二进制代码只能在本地操作系统环境下运行，因为不同的操作系统环境，有自己的本地库和CPU指令集，而且各个平台对标准C/C++的规范和标准库函数实现方式也有所区别。这就造成了各个平台使用JNI接口的Java程序，不再像以前那样自由的跨平台。如果要实现跨平台， 就必须将本地代码在不同的操作系统平台下编译出相应的动态库。</p>
-<h3 id="3-2-为何jni"><a href="#3-2-为何jni" class="headerlink" title="3.2 为何jni"></a>3.2 为何jni</h3><p>可以使用Java代码和C/C++进行交互，与其它类似接口Microsoft的原始本地接口等相比，JNI的主要竞争优势在于：它在设计之初就确保了二进制的兼容性，JNI编写的应用程序兼容性以及其再某些具体平台上的Java虚拟机兼容性(当谈及JNI时，这里并不特比针对Davik虚拟机，JNI适用于所有JVM虚拟机)。这就是为什么C/C++编译后的代码无论在任何平台上都能执行。不过，一些早期版本并不支持二进制兼容。二进制兼容性是一种程序兼容性类型，允许一个程序在不改变其可执行文件的条件下在不同的编译环境中工作。</p>
-<h3 id="3-3-工作原理"><a href="#3-3-工作原理" class="headerlink" title="3.3 工作原理"></a>3.3 工作原理</h3><p><img src="2.webp" alt="img"></p>
-<p><img src="3.webp" alt="img"></p>
-<p>JNI是作为一个桥梁的作用，链接java和c/c++</p>
-<h3 id="3-4-命名"><a href="#3-4-命名" class="headerlink" title="3.4 命名"></a>3.4 命名</h3><p>例子</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">JNIExport jstring JNICALL <span class="title">Java_com_example_hellojni_MainActivity_stringFromJNI</span><span class="params">( JNIEnv* env,jobject thiz )</span> </span></span><br></pre></td></tr></table></figure>
+        <h1 id="Base64-的算法原理"><a href="#Base64-的算法原理" class="headerlink" title="Base64 的算法原理"></a>Base64 的算法原理</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Base64算法是我们日常生活中必不可少的加密编码方式之一，它常用64个可打印字符表示任意字符，通常用来储存、传输一些二进制数据；在一些加密方式，可以通过了解原理后进行更深入的加密运算操作。</p>
+<h2 id="标准表"><a href="#标准表" class="headerlink" title="标准表"></a>标准表</h2><p>由于它是使用64个可打印字符表示的数据，则一定有一种特殊的对应关系。由于2的6次方等于64，所以可以用每6个位元为一个单元，对应某个可打印字符。我们知道三个字节有24个位元，就可以刚好对应于4个Base64单元，即3个字节需要用4个Base64的可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9 ，这样共有62个字符，此外两个可打印符号在不同的系统中一般有所不同。但是，我们经常所说的Base64另外2个字符是：“+/”。这64个字符，所对应表如下</p>
+<table class="table" style="color: rgba(0, 0, 0, 1); width: 80%" border="1" rules="all" cellspacing="0" align="center">
+<tbody>
+<tr><th scope="col">编号</th><th scope="col">字符</th><th rowspan="18">&nbsp;</th><th scope="col">编号</th><th scope="col">字符</th><th rowspan="18">&nbsp;</th><th scope="col">编号</th><th scope="col">字符</th><th rowspan="18">&nbsp;</th><th scope="col">编号</th><th scope="col">字符</th></tr>
+<tr>
+<td>0</td>
+<td>A</td>
+<td>16</td>
+<td>Q</td>
+<td>32</td>
+<td>g</td>
+<td>48</td>
+<td>w</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>17</td>
+<td>R</td>
+<td>33</td>
+<td>h</td>
+<td>49</td>
+<td>x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>18</td>
+<td>S</td>
+<td>34</td>
+<td>i</td>
+<td>50</td>
+<td>y</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>19</td>
+<td>T</td>
+<td>35</td>
+<td>j</td>
+<td>51</td>
+<td>z</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>20</td>
+<td>U</td>
+<td>36</td>
+<td>k</td>
+<td>52</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>21</td>
+<td>V</td>
+<td>37</td>
+<td>l</td>
+<td>53</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G</td>
+<td>22</td>
+<td>W</td>
+<td>38</td>
+<td>m</td>
+<td>54</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>H</td>
+<td>23</td>
+<td>X</td>
+<td>39</td>
+<td>n</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>I</td>
+<td>24</td>
+<td>Y</td>
+<td>40</td>
+<td>o</td>
+<td>56</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>J</td>
+<td>25</td>
+<td>Z</td>
+<td>41</td>
+<td>p</td>
+<td>57</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>K</td>
+<td>26</td>
+<td>a</td>
+<td>42</td>
+<td>q</td>
+<td>58</td>
+<td>6</td>
+</tr>
+<tr>
+<td>11</td>
+<td>L</td>
+<td>27</td>
+<td>b</td>
+<td>43</td>
+<td>r</td>
+<td>59</td>
+<td>7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M</td>
+<td>28</td>
+<td>c</td>
+<td>44</td>
+<td>s</td>
+<td>60</td>
+<td>8</td>
+</tr>
+<tr>
+<td>13</td>
+<td>N</td>
+<td>29</td>
+<td>d</td>
+<td>45</td>
+<td>t</td>
+<td>61</td>
+<td>9</td>
+</tr>
+<tr>
+<td>14</td>
+<td>O</td>
+<td>30</td>
+<td>e</td>
+<td>46</td>
+<td>u</td>
+<td>62</td>
+<td>+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>P</td>
+<td>31</td>
+<td>f</td>
+<td>47</td>
+<td>v</td>
+<td>63</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+有的加密就是通过魔改base64标准表，进而达到加密效果
 
-<p><strong><code>jstring</code></strong> 是<strong>返回值类型</strong><br> <strong><code>Java_com_example_hellojni</code></strong> 是<strong>包名</strong><br> <strong><code>MainActivity</code></strong> 是<strong>类名</strong><br> <strong><code>stringFromJNI</code></strong> 是<strong>方法名</strong></p>
-<p>其中**<code>JNIExport</code><strong>和</strong><code>JNICALL</code>**是不固定保留的关键字不要修改</p>
-<h3 id="3-5-JNI开发流程"><a href="#3-5-JNI开发流程" class="headerlink" title="3.5 JNI开发流程"></a>3.5 JNI开发流程</h3><blockquote>
-<ul>
-<li>第1步：在Java中先声明一个native方法</li>
-<li>第2步：编译Java源文件javac得到.class文件</li>
-<li>第3步：通过javah -jni命令导出JNI的.h头文件</li>
-<li>第4步：使用Java需要交互的本地代码，实现在Java中声明的Native方法（如果Java需要与C++交互，那么就用C++实现Java的Native方法。）</li>
-<li>第5步：将本地代码编译成动态库(Windows系统下是.dll文件，如果是Linux系统下是.so文件，如果是Mac系统下是.jnilib)</li>
-<li>第6步：通过Java命令执行Java程序，最终实现Java调用本地代码。</li>
-</ul>
-</blockquote>
-<p>PS：javah 是JDK自带的一个命令，-jni参数表示将class 中用到native 声明的函数生成JNI 规则的函数</p>
-<p><img src="webp.webp" alt="img"></p>
-<h2 id="四、实现一个JNI例子"><a href="#四、实现一个JNI例子" class="headerlink" title="四、实现一个JNI例子"></a>四、实现一个JNI例子</h2><h3 id="4-1-创建app"><a href="#4-1-创建app" class="headerlink" title="4.1 创建app"></a>4.1 创建app</h3><p>打开android studio,新建一个project, Create Android Project</p>
-<p><img src="image-20211212162000770.png" alt="image-20211212162000770"></p>
-<p>这里可以勾选Include C++ support, Android studio会给出一个使用JNI的例子。</p>
-<h3 id="4-2-创建-测试类"><a href="#4-2-创建-测试类" class="headerlink" title="4.2 创建 测试类"></a>4.2 创建 测试类</h3><p>新建一个testso的java类，在里面声明一个native方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.qqq.sotest.sotest;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by admin on 2021/12/12.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testso</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.loadLibrary(<span class="string">&quot;so-lib&quot;</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">native</span> String <span class="title">getJniTestString</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><p> 对于任意字符串，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。数据不足3byte的话，于缓冲区中剩下的bit用0补足。然后，每次取出6个bit，按照其值选择<code>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</code>中的字符作为编码后的输出。不断进行，直到全部输入数据转换完成。</p>
+<p>  如果最后剩下两个输入数据，在编码结果后加1个“=”；如果最后剩下一个输入数据，编码结果后加2个“=”；如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</p>
+<p>  编码后的数据比原始数据略长，为原来的4/3。无论什么样的字符都会全部被编码。</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><table class="table" style="color: rgba(0, 0, 0, 1); width: 80%" border="1" rules="all" cellspacing="0" align="center">
+<tbody>
+<tr><th scope="row">文本</th>
+<td colspan="8" align="center"><strong>M</strong></td>
+<td colspan="8" align="center"><strong>a</strong></td>
+<td colspan="8" align="center"><strong>n</strong></td>
+</tr>
+<tr><th scope="row">ASCII编码</th>
+<td colspan="8" align="center">77</td>
+<td colspan="8" align="center">97</td>
+<td colspan="8" align="center">110</td>
+</tr>
+<tr><th scope="row">二进制位</th>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><th scope="row">索引</th>
+<td colspan="6" align="center">19</td>
+<td colspan="6" align="center">22</td>
+<td colspan="6" align="center">5</td>
+<td colspan="6" align="center">46</td>
+</tr>
+<tr><th scope="row">Base64编码</th>
+<td colspan="6" align="center"><strong>T</strong></td>
+<td colspan="6" align="center"><strong>W</strong></td>
+<td colspan="6" align="center"><strong>F</strong></td>
+<td colspan="6" align="center"><strong>u</strong></td>
+</tr>
+</tbody>
+</table>
 
-<p><img src="4.png" alt="image-20211212162936951"></p>
-<p>注意，loadLibrary的是在CMakeLists.txt设置的library的名字，而不是c文件名</p>
-<h3 id="4-3-创建c文件"><a href="#4-3-创建c文件" class="headerlink" title="4.3 创建c文件"></a>4.3 创建c文件</h3><p>在app/src/main/cpp/目录下新建一个so-test.c的文件，实现c语言方法，如</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;jni.h&gt;</span></span></span><br><span class="line">JNIEXPORT jstring JNICALL Java_com_qqq_sotest_sotest_testso_getJniTestString</span><br><span class="line">        (JNIEnv * env, jclass object)&#123;</span><br><span class="line">    <span class="keyword">return</span> (*env)-&gt;NewStringUTF(env,<span class="string">&quot;测试 jni&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table class="table" style="color: rgba(0, 0, 0, 1); width: 80%" border="1" rules="all" cellspacing="0" align="center">
+<tbody>
+<tr><th scope="row">文本（1 Byte）</th>
+<td colspan="8" align="center"><strong>A</strong></td>
+<td colspan="8" align="center">&nbsp;</td>
+<td colspan="8" align="center">&nbsp;</td>
+</tr>
+<tr><th scope="row">二进制位</th>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th scope="row">二进制位（补0）</th>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th scope="row">Base64编码</th>
+<td colspan="6" align="center"><strong>Q</strong></td>
+<td colspan="6" align="center"><strong>Q</strong></td>
+<td colspan="6" align="center"><strong>=</strong></td>
+<td colspan="6" align="center"><strong>=</strong></td>
+</tr>
+<tr><th scope="row">文本（2 Byte）</th>
+<td colspan="8" align="center"><strong>B</strong></td>
+<td colspan="8" align="center"><strong>C</strong></td>
+<td colspan="8" align="center">&nbsp;</td>
+</tr>
+<tr><th scope="row">二进制位</th>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr><th scope="row">二进制位（补0）</th>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr><th scope="row">Base64编码</th>
+<td colspan="6" align="center"><strong>Q</strong></td>
+<td colspan="6" align="center"><strong>k</strong></td>
+<td colspan="6" align="center"><strong>M</strong></td>
+<td colspan="6" align="center">&nbsp;<strong>=</strong></td>
+</tr>
+</tbody>
+</table>
 
-<p><img src="image-20211212164349767.png" alt="image-20211212164349767"></p>
-<p>创建c文件里面的<code>JNICALL Java_xxxx_xxxx_xxxx</code>必须遵循命名规则。</p>
-<h3 id="4-4-添加到CMakeLists-txt"><a href="#4-4-添加到CMakeLists-txt" class="headerlink" title="4.4 添加到CMakeLists.txt"></a>4.4 添加到CMakeLists.txt</h3><p>需要把so-test.c文件告诉Android Studio，通过CMake修改</p>
-<p>在app/src/main/CMakeLists.txt添加如下内容</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add_library( # Sets the name of the library.</span><br><span class="line">             so-lib</span><br><span class="line"></span><br><span class="line">             # Sets the library as a shared library.</span><br><span class="line">             SHARED</span><br><span class="line"></span><br><span class="line">             # Provides a relative path to your source file(s).</span><br><span class="line">             src/main/cpp/so-test.c )</span><br></pre></td></tr></table></figure>
-
-<p><code>so-lib</code>设置library的名字,在java代码里引用</p>
-<p><code>SHARED</code>将其设为共享的library</p>
-<p><code>src/main/cpp/so-test.c</code> c文件的路径</p>
-<p><img src="image-20211212165436159.png" alt="image-20211212165436159"></p>
-<h3 id="4-5-构建"><a href="#4-5-构建" class="headerlink" title="4.5 构建"></a>4.5 构建</h3><p>点击<code>Build</code>-&gt;<code>Make Project</code>构建，或者<code>ctrl</code>+<code>F9</code>构建， 再运行</p>
-<p>这样，c/cpp文件就被打包成so文件了。</p>
-<p><img src="image-20211212171338595.png" alt="image-20211212171338595"></p>
-<p>打包完成后so文件会放在apk的lib/文件夹里</p>
-<p><img src="enbd8-nseor.gif" alt="enbd8-nseor"></p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><p>Android JNI(一)——NDK与JNI基础：</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/87ce6f565d37">https://www.jianshu.com/p/87ce6f565d37</a></p>
-</li>
-<li><p>Android Studio生成so文件的几种方式：</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/faa3eebbd401">https://www.jianshu.com/p/faa3eebbd401</a></p>
-</li>
-<li><p>Android studio 编译NDK Android studio 生成.so文件：</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4c7d9a10933b">https://www.jianshu.com/p/4c7d9a10933b</a></p>
-</li>
-</ul>
+<h2 id="链接引用"><a href="#链接引用" class="headerlink" title="链接引用"></a>链接引用</h2><p>Base64 算法原理，以及编码、解码【加密、解密】 介绍：</p>
+<p><a target="_blank" rel="noopener" href="http://blog.chacuo.net/719.html">http://blog.chacuo.net/719.html</a></p>
 
       </div>
       
@@ -703,7 +976,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/12/12/android-studio-sheng-cheng-so-wen-jian/" target="_blank" title="Android studio生成so文件">https://kuangtant.gitee.io/2021/12/12/android-studio-sheng-cheng-so-wen-jian/</a>
+    <a href="/2021/12/13/base64-de-suan-fa-yuan-li/" target="_blank" title="Base64 的算法原理">https://kuangtant.gitee.io/2021/12/13/base64-de-suan-fa-yuan-li/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -721,40 +994,20 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/9.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/12/13/base64-de-suan-fa-yuan-li/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> 上一篇:
-        <div>Base64 的算法原理</div>
-      </div>
-      
-      <!-- <div class="content">
-        Base64 的算法原理前言Base64算法是我们日常生活中必不可少的加密编码方式之一，它常用64个可打印字符表示任意字
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/10.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/12/03/ascii-zhuan-huan-gong-ju/" class="post-nav-link">
+    <a href="/2021/12/12/android-studio-sheng-cheng-so-wen-jian/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fa fa-angle-right"></i>
-        <div>ASCII 转换工具</div>
+        <div>Android studio生成so文件</div>
       </div>
       <!-- <div class="content">
-        前言在日常学习过程中，难免有些进制转换的问题，比如ASCII转2,10，16进制等，就可以使用如下工具
-
-
-
+        Android studio生成so文件一、简介现在，大部分安卓app的开发几乎都是使用java完成，但是，Java在速
       </div> -->
     </a>
   </div>
