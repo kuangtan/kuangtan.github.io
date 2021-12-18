@@ -11,10 +11,10 @@
   
   
   
-<meta name="keywords" content="C语言,编译器,C语言编译,运行C语言,kuangtant">
+<meta name="keywords" content="kuangtant">
 
   
-<meta name="description" content="Android平台，C语言的运行,下载Termux运行C语言。C语言编译器。">
+<meta name="description" content="kuangtant">
 
   
   
@@ -22,7 +22,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Android平台，C语言的运行 | kuangtant</title>
+  <title>对 栈 的理解 | kuangtant</title>
 
   
     
@@ -551,7 +551,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/1.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/12.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>
@@ -562,7 +562,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['Android平台，C语言的运行'],
+              strings: ['对 栈 的理解'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -587,7 +587,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-09-09</span>
+        <span class="post-time">2021-12-18</span>
       </div>
       
       <div class="post-tags-categories">
@@ -595,110 +595,124 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/Android/" class="">
-              Android
+            <a href="/tags/%E5%8E%9F%E7%90%86/" class="">
+              原理
             </a>
           
-            <a href="/tags/Termux/" class="">
-              Termux
-            </a>
-          
-            <a href="/tags/%E7%BC%96%E8%AF%91%E5%99%A8/" class="">
-              编译器
-            </a>
-          
-            <a href="/tags/C/" class="">
-              C
+            <a href="/tags/%E8%AF%AD%E6%B3%95/" class="">
+              语法
             </a>
           
         </div>
         
-        
-        <div class="categories">
-          <i class="iconfont iconbookmark1"></i>
-          
-            <a href="/categories/C/" class="">
-              C
-            </a>
-          
-        </div>
         
       </div>
       <div class="post-content">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>都知道，在Windows,Linux,Mac等平台上，C语言程序的运行十分简单，但是在移动端上，比如Android系统上，就存在一些困难。本文就是为解决这一问题而生。</p>
-<h1 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h1><p>我比较推荐，因为这个方法比较完善，C语言执行结果较好。</p>
-<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>需要运行如下C语言程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line">	  printf(&quot;HelloWorld!My C\n&quot;);</span><br><span class="line">	    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
-<li><p>在Google Play或者其他应用商店下载Termux软件并安装。</p>
-</li>
-<li><p>打开Termux,执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
-<p>命令，没有出现storage字样，就必须</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
-<p>方便以后访问sdcard文件内容。</p>
-</li>
-<li><p>了解Termux软件的目录是~/storage/shared/，其下文件才是你在系统的文件管理器下看到的文件</p>
-</li>
-<li><p> 安装C语言编译程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install clang</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>首先执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd storage&#x2F;shared&#x2F;</span><br></pre></td></tr></table></figure>
-<p>接下来便可以执行你的C语言程序了。<br>我需要运行上述需求里的C语言代码，我需要新建一个文件夹（如myc文件夹），可以手动用文件管理器创建，也可以用命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir myc</span><br></pre></td></tr></table></figure>
-<p>打开新建的文件夹（我新建的是myc文件夹，所以我打开cd myc）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd myc</span><br></pre></td></tr></table></figure>
-<p>下面可以手动或者命令新建一个以.c结尾的文件，（我创建一个ifirst.c）,用文本的方式打开，输入上述需求中的代码。保存后，就可以运行了。</p>
-<h2 id="运行C"><a href="#运行C" class="headerlink" title="运行C"></a>运行C</h2><ol>
-<li><p>可以使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o te ifirst.c</span><br></pre></td></tr></table></figure>
-<p>编译ifirst.c文件，生成te文件，接着运行编译好了的te文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;te</span><br></pre></td></tr></table></figure>
-<p>就可以看见程序输出HelloWorld!My C的结果了。</p>
-</li>
-<li><p>也可以使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clang ifirst.c</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc ifirst.c</span><br></pre></td></tr></table></figure>
-<p>两者效果一样<br>编译ifirst.c文件，生成a.out文件，接着运行编译好了的a.out文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;a.out</span><br></pre></td></tr></table></figure>
-<p>也会得到HelloWorld!My C的结果</p>
-</li>
-</ol>
-<h2 id="关于Permission-denied的错误处理"><a href="#关于Permission-denied的错误处理" class="headerlink" title="关于Permission denied的错误处理"></a>关于Permission denied的错误处理</h2><p>运行上述编译好了的文件te或者a.out有的会报错：Permission denied，建议按照如下方法处理。<br>原因是在sdcard目录没有运行的权限</p>
+        <h1 id="对-栈-的理解"><a href="#对-栈-的理解" class="headerlink" title="对 栈 的理解"></a>对 栈 的理解</h1><h2 id="一，初始"><a href="#一，初始" class="headerlink" title="一，初始"></a>一，初始</h2><p>栈是一种具有特殊访问方式的储存空间。它的特殊性就在于，最后进入这个空间的数据，最先出去。</p>
 <ul>
-<li><p>可以使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp  .&#x2F;te  ~&#x2F;te</span><br></pre></td></tr></table></figure>
-<p>再运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;te</span><br></pre></td></tr></table></figure>
-<p>结果变正常了</p>
+<li>可以用一个盒子和3本书描述<img src="810k6-c3lav.gif" alt="img"></li>
+</ul>
+<p>可以想象一下，如果这三本书是一行行代码，那么，它的解释入栈和出栈原理就是和图中所示的大概一样。</p>
+<h2 id="二、栈的操作"><a href="#二、栈的操作" class="headerlink" title="二、栈的操作"></a>二、栈的操作</h2><ul>
+<li>入栈：将一个新的元素放到栈顶</li>
+<li>出栈：从栈顶取出一个元素</li>
+</ul>
+<blockquote>
+<p>栈顶的元素总是最后入栈，需要出栈时，又总是最先被从栈中取出</p>
+<p>这种操作规则：LIFO（Last in First out,后进先出）</p>
+</blockquote>
+<p>一般来说，在汇编中，入栈和出栈的指令是最基本的，push(入栈)，pop(出栈)</p>
+<p>如：</p>
+<p><code>push ax</code>将寄存器ax中的数据送入栈中</p>
+<p><code>pop ax</code>从栈顶取出数据放到ax寄存器中</p>
+<blockquote>
+<p><code>8086CPU</code>的入栈和出栈方式都是以字(16位)为单位进行的</p>
+</blockquote>
+<h2 id="三、举例理解"><a href="#三、举例理解" class="headerlink" title="三、举例理解"></a>三、举例理解</h2><p>如果将<code>10000H~1000FH</code>这段内存当做栈来使用，理解以下指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mov ax,0123H</span><br><span class="line">push ax</span><br><span class="line">mov bx,2266H</span><br><span class="line">push bx</span><br><span class="line">mov cx,1122H</span><br><span class="line">push cx</span><br><span class="line">pop ax</span><br><span class="line">pop bx</span><br><span class="line">pop cx</span><br></pre></td></tr></table></figure>
+
+<p>分解指令理解</p>
+<ul>
+<li><p>初始栈的模型</p>
+<p><img src="image-20211218142551845.png" alt="image-20211218142551845"></p>
 </li>
-<li><p>或者使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp  .&#x2F;a.out  ~&#x2F;a.out</span><br></pre></td></tr></table></figure>
-<p>再运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;a.out</span><br></pre></td></tr></table></figure>
-<p>也可以</p>
+<li><p><code>mov ax,0123H</code>和<code>push ax</code> </p>
+<p>将<code>0123H</code>放入ax中，然后将ax中的数据push 进栈</p>
+<p><img src="image-20211218142851085.png" alt="image-20211218142851085"></p>
 </li>
-<li><p>使用脚本</p>
+<li><p>同理，<code> mov bx,2266H</code>和<code>push bx</code></p>
+<p>将<code>2266H</code>放入bx寄存器中，再将bx中的数据push进栈</p>
+<p><img src="image-20211218143350528.png" alt="image-20211218143350528"></p>
+</li>
+<li><p>同理，<code>mov cx,1122H</code>和<code>push cx</code></p>
+<p><img src="image-20211218143631913.png" alt="image-20211218143631913"></p>
+</li>
+<li><p><code>pop ax</code></p>
+<p><code>pop</code>指令是将栈顶的元素取出，放入ax中,由于这时栈顶的元素数据是<code>1122H</code>，所以将其取出</p>
+<p><img src="image-20211218144052750.png" alt="image-20211218144052750"></p>
+</li>
+<li><p><code>pop bx</code></p>
+<p>同理，这时pop取出栈顶的元素<code>2266H</code>,并放入bx中</p>
+<p><img src="image-20211218144721558.png" alt="image-20211218144721558"></p>
+</li>
+<li><p><code>pop cx</code></p>
+<p>这时取出<code>0123H</code>，将其放入cx中</p>
+<p><img src="image-20211218145729752.png" alt="image-20211218145729752"></p>
 </li>
 </ul>
+<p>由此，一个程序执行完毕，栈就恢复了原始状态</p>
+<blockquote>
+<p>注意：字形数据用两个单元存放，高地址放高8位，低地址放低8位</p>
+</blockquote>
+<h2 id="四、CPU如何知道指令位置"><a href="#四、CPU如何知道指令位置" class="headerlink" title="四、CPU如何知道指令位置"></a>四、CPU如何知道指令位置</h2><p>通过了一个例子的执行，可能有个问题，CPU是如何知道要执行指令的位置</p>
+<p>答案是，寄存器<code>CS</code>和<code>IP</code>中存放着当前指令的段地址和偏移地址，并且，在任意时刻，<code>SS:SP</code>都指向栈顶的元素。</p>
+<ul>
+<li><p>段寄存器SS: 存放栈顶的段地址</p>
+</li>
+<li><p>寄存器SP：存放栈顶的偏移地址</p>
+<h3 id="push深刻理解"><a href="#push深刻理解" class="headerlink" title="push深刻理解"></a>push深刻理解</h3></li>
+</ul>
+<p><code>push ax</code>事实上执行了两步操作，</p>
 <ol>
-<li>下载runC文件:<a target="_blank" rel="noopener" href="https://gitee.com/kuangtant/runC/repository/archive/master.zip">下载runC</a>，解压后将其中的runC文件复制到C语言程序目录<br>或者 在C语言程序目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O runC https:&#x2F;&#x2F;gitee.com&#x2F;kuangtant&#x2F;runC&#x2F;raw&#x2F;master&#x2F;runC</span><br></pre></td></tr></table></figure></li>
-<li>将runC文件和你要运行的C语言程序放在一起，采用gcc 编译，我的是ifirst.c<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc ifirst.c</span><br></pre></td></tr></table></figure>
-生成a.out文件</li>
-<li>最后，命令执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash runC</span><br></pre></td></tr></table></figure>
-就可以看到结果了</li>
+<li><p><code>SP=SP-2</code></p>
+</li>
+<li><p>将ax中的内容送入<code>SS:SP</code>指向的内存单元处，<code>SS:SP</code>指向新的栈顶</p>
+</li>
 </ol>
-<h1 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h1><p>网络上的<a target="_blank" rel="noopener" href="https://m.baidu.com/from=1023640y/s?word=:C%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E5%99%A8&ie=utf-8">C语言编译器</a>较多，可以下载使用，不过还是最推荐方案一;</p>
-<p>由于这类产品的编译结果及原理各有千秋，所以，具体效果如何，就不一一推荐了。</p>
-<h1 id="本文视频教程"><a href="#本文视频教程" class="headerlink" title="本文视频教程"></a>本文视频教程</h1><ol>
-<li>优酷视频：<a target="_blank" rel="noopener" href="https://v.youku.com/v_show/id_XNTgwNzg3MDQyOA==.html">https://v.youku.com/v_show/id_XNTgwNzg3MDQyOA==.html</a></li>
-<li>腾讯视频：<a target="_blank" rel="noopener" href="https://v.qq.com/x/page/y3277qnfm8s.html">https://v.qq.com/x/page/y3277qnfm8s.html</a></li>
+<p><img src="image-20211218151824132.png" alt="image-20211218151824132"></p>
+<h3 id="pop深刻理解"><a href="#pop深刻理解" class="headerlink" title="pop深刻理解"></a>pop深刻理解</h3><p>pop与push是逆运算，<code>pop ax</code>同样也需要执行两步操作</p>
+<ol>
+<li>将<code>SS:SP</code>指向的单元中的数据取出，放到ax中</li>
+<li><code>SP=SP+2</code>，这时<code>SS:SP</code>指向了新的单元</li>
 </ol>
+<p><img src="image-20211218153457919.png" alt="image-20211218153457919"></p>
+<p>由上面两步可以看出，所谓 ’取出‘ 数据，其实，并只取出了数据，并没有删除内存中的数据，而是将<code>SS:IP</code>的指向改变了，原来存入的数据还在，若想要删除，只能用新的数据覆盖</p>
+<h2 id="五、栈的大小"><a href="#五、栈的大小" class="headerlink" title="五、栈的大小"></a>五、栈的大小</h2><p>因为<code>SS:SP</code>只记录了栈顶的地址，依靠SS和SP可以保证入栈和出栈时找到栈顶，如何保证在入栈和出栈时，栈顶不会超出栈空间？</p>
+<p>即是</p>
+<ul>
+<li>当栈满的时候再使用push指令入栈</li>
+<li>当栈空的时候再使用pop指令出栈</li>
+</ul>
+<p>这就会导致栈顶超界问题，非常危险</p>
+<ol>
+<li><p>栈顶超界</p>
+<p><img src="g6bmg-yh3ty.gif" alt="img"></p>
+</li>
+<li><p>栈底超界</p>
+<p><img src="srnvk-bun1d.gif" alt="img"></p>
+</li>
+</ol>
+<p>以上演示图片说明，栈顶超界是危险的</p>
+<p>因为我们既然将一段空间安排为栈，那么在栈空间之外的空间里很可能存放了具有其它用途的数据、代码，可能是我们自己程序中的，也可能是别的程序中的，毕竟在计算机中并不是只有我们自己的程序在运行。</p>
+<p>这就是所谓的<code>栈溢出</code>,从黑客角度，就是<code>溢出攻击</code></p>
+<h2 id="六、设置栈"><a href="#六、设置栈" class="headerlink" title="六、设置栈"></a>六、设置栈</h2><p>如果将<code>10000H~1000FH</code>这段空间当做栈，初始状态是空的，如何将<code>AX</code>,<code>BX</code>,<code>DS</code>中的数据入栈？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mov ax,1000H</span><br><span class="line">mov ss,ax ;设置栈的段地址，SS&#x3D;1000H,不能直接向SS送入数据，用AX中转</span><br><span class="line">mov sp,0010H ;设置栈顶的偏移地址，因为栈为空，所以SP&#x3D;0010H</span><br><span class="line">push ax</span><br><span class="line">push bx</span><br><span class="line">push ds</span><br></pre></td></tr></table></figure>
+
+<p>  栈的意义就在于暂时储存以后需要恢复的寄存器内容</p>
+<h2 id="七、参考链接"><a href="#七、参考链接" class="headerlink" title="七、参考链接"></a>七、参考链接</h2><p>小甲鱼汇编入门：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1zW411n79C">https://www.bilibili.com/video/BV1zW411n79C</a></p>
+<p>阮一峰-汇编入门教程：</p>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2018/01/assembly-language-primer.html">https://www.ruanyifeng.com/blog/2018/01/assembly-language-primer.html</a></p>
 
       </div>
       
@@ -709,7 +723,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/09/09/android-ping-tai-c-yu-yan-de-yun-xing/" target="_blank" title="Android平台，C语言的运行">https://kuangtant.gitee.io/2021/09/09/android-ping-tai-c-yu-yan-de-yun-xing/</a>
+    <a href="/2021/12/18/dui-zhan-de-li-jie/" target="_blank" title="对 栈 的理解">https://kuangtant.gitee.io/2021/12/18/dui-zhan-de-li-jie/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -727,38 +741,20 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/09/17/android-de-java-yun-xing-fang-an/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> 上一篇:
-        <div>Android的java运行方案</div>
-      </div>
-      
-      <!-- <div class="content">
-        背景java语言早已经被各大厂商，集团，学校，社会等运用，并且发挥了巨大的作用，一般来说，java具有可移植的特性，能够
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/9.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/09/02/git-de-xiang-xi-pei-zhi/" class="post-nav-link">
+    <a href="/2021/12/13/base64-de-suan-fa-yuan-li/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fa fa-angle-right"></i>
-        <div>Git的详细配置</div>
+        <div>Base64 的算法原理</div>
       </div>
       <!-- <div class="content">
-        基本安装好Git后，便可以进行配置了，后面就可以体验它的强大功能了。
-配置信息全局配置 我们要使用Git就必须登陆它，输
+        Base64 的算法原理前言Base64算法是我们日常生活中必不可少的加密编码方式之一，它常用64个可打印字符表示任意字
       </div> -->
     </a>
   </div>
