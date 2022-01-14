@@ -6,7 +6,7 @@
   <link href="https://kuangtant.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://kuangtant.gitee.io/"/>
-  <updated>2021-12-25T10:10:35.511Z</updated>
+  <updated>2022-01-14T15:36:15.036Z</updated>
   <id>https://kuangtant.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>打造Android最简单优雅的Linux面板</title>
+    <link href="https://kuangtant.gitee.io/2022/01/14/da-zao-android-zui-jian-dan-you-ya-de-linux-mian-ban/"/>
+    <id>https://kuangtant.gitee.io/2022/01/14/da-zao-android-zui-jian-dan-you-ya-de-linux-mian-ban/</id>
+    <published>2022-01-14T15:32:17.000Z</published>
+    <updated>2022-01-14T15:36:15.036Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;打造Android最简单优雅的Linux面板&quot;&gt;&lt;a href=&quot;#打造Android最简单优雅的Linux面板&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Android" scheme="https://kuangtant.gitee.io/tags/Android/"/>
+    
+    <category term="Termux" scheme="https://kuangtant.gitee.io/tags/Termux/"/>
+    
+    <category term="Linux" scheme="https://kuangtant.gitee.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>android 嵌入python 互交</title>
