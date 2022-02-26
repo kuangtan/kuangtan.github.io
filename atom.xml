@@ -6,7 +6,7 @@
   <link href="https://kuangtant.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://kuangtant.gitee.io/"/>
-  <updated>2022-01-14T15:36:15.036Z</updated>
+  <updated>2022-02-26T07:21:48.325Z</updated>
   <id>https://kuangtant.gitee.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>微信小程序的理解</title>
+    <link href="https://kuangtant.gitee.io/2022/02/26/wei-xin-xiao-cheng-xu-de-li-jie/"/>
+    <id>https://kuangtant.gitee.io/2022/02/26/wei-xin-xiao-cheng-xu-de-li-jie/</id>
+    <published>2022-02-26T07:20:06.000Z</published>
+    <updated>2022-02-26T07:21:48.325Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;微信小程序的理解&quot;&gt;&lt;a href=&quot;#微信小程序的理解&quot; class=&quot;headerlink&quot; title=&quot;微信小程序的理解&quot;&gt;&lt;/a&gt;微信小程序的理解&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="微信" scheme="https://kuangtant.gitee.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+    <category term="小程序" scheme="https://kuangtant.gitee.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>打造Android最简单优雅的Linux面板</title>
     <link href="https://kuangtant.gitee.io/2022/01/14/da-zao-android-zui-jian-dan-you-ya-de-linux-mian-ban/"/>
     <id>https://kuangtant.gitee.io/2022/01/14/da-zao-android-zui-jian-dan-you-ya-de-linux-mian-ban/</id>
     <published>2022-01-14T15:32:17.000Z</published>
-    <updated>2022-01-14T15:36:15.036Z</updated>
+    <updated>2022-02-06T12:37:38.939Z</updated>
     
     
       
@@ -334,15 +359,15 @@
     
     <category term="Android" scheme="https://kuangtant.gitee.io/tags/Android/"/>
     
-    <category term="Java" scheme="https://kuangtant.gitee.io/tags/Java/"/>
+    <category term="编译器" scheme="https://kuangtant.gitee.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"/>
     
     <category term="Termux" scheme="https://kuangtant.gitee.io/tags/Termux/"/>
+    
+    <category term="Java" scheme="https://kuangtant.gitee.io/tags/Java/"/>
     
     <category term="JDK" scheme="https://kuangtant.gitee.io/tags/JDK/"/>
     
     <category term="AIDE" scheme="https://kuangtant.gitee.io/tags/AIDE/"/>
-    
-    <category term="编译器" scheme="https://kuangtant.gitee.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"/>
     
   </entry>
   
@@ -361,13 +386,13 @@
     <category term="C" scheme="https://kuangtant.gitee.io/categories/C/"/>
     
     
-    <category term="Android" scheme="https://kuangtant.gitee.io/tags/Android/"/>
+    <category term="C" scheme="https://kuangtant.gitee.io/tags/C/"/>
     
-    <category term="Termux" scheme="https://kuangtant.gitee.io/tags/Termux/"/>
+    <category term="Android" scheme="https://kuangtant.gitee.io/tags/Android/"/>
     
     <category term="编译器" scheme="https://kuangtant.gitee.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"/>
     
-    <category term="C" scheme="https://kuangtant.gitee.io/tags/C/"/>
+    <category term="Termux" scheme="https://kuangtant.gitee.io/tags/Termux/"/>
     
   </entry>
   
