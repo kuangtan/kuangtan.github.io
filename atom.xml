@@ -6,7 +6,7 @@
   <link href="https://kuangtant.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://kuangtant.gitee.io/"/>
-  <updated>2022-02-26T07:21:48.325Z</updated>
+  <updated>2022-03-25T10:28:23.158Z</updated>
   <id>https://kuangtant.gitee.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初始花指令</title>
+    <link href="https://kuangtant.gitee.io/2022/03/25/chu-shi-hua-zhi-ling/"/>
+    <id>https://kuangtant.gitee.io/2022/03/25/chu-shi-hua-zhi-ling/</id>
+    <published>2022-03-25T10:20:42.000Z</published>
+    <updated>2022-03-25T10:28:23.158Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;初始花指令&quot;&gt;&lt;a href=&quot;#初始花指令&quot; class=&quot;headerlink&quot; title=&quot;初始花指令&quot;&gt;&lt;/a&gt;初始花指令&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="tools" scheme="https://kuangtant.gitee.io/tags/tools/"/>
+    
+    <category term="C" scheme="https://kuangtant.gitee.io/tags/C/"/>
+    
+    <category term="算法" scheme="https://kuangtant.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="原理" scheme="https://kuangtant.gitee.io/tags/%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序的理解</title>
@@ -482,31 +511,6 @@
     <category term="Markdown编辑器" scheme="https://kuangtant.gitee.io/tags/Markdown%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
     <category term="Quiver" scheme="https://kuangtant.gitee.io/tags/Quiver/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo 发射！！！</title>
-    <link href="https://kuangtant.gitee.io/2021/08/25/hexo-fa-she/"/>
-    <id>https://kuangtant.gitee.io/2021/08/25/hexo-fa-she/</id>
-    <published>2021-08-24T17:14:32.000Z</published>
-    <updated>2021-09-28T06:22:18.000Z</updated>
-    
-    
-    <summary type="html">hexo是一个好的选择，是一个快速、简洁且高效的博客框架,超快速度,Node.js 所带来的超快生成速度,Hexo 支持GitHub Flavored Markdown 的所有功能,一键部署Gitee，GitHub Pages,Heroku平台，安装Hexo</summary>
-    
-    
-    
-    <category term="Hexo" scheme="https://kuangtant.gitee.io/categories/Hexo/"/>
-    
-    
-    <category term="Git" scheme="https://kuangtant.gitee.io/tags/Git/"/>
-    
-    <category term="Hexo" scheme="https://kuangtant.gitee.io/tags/Hexo/"/>
-    
-    <category term="博客" scheme="https://kuangtant.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="nodejs" scheme="https://kuangtant.gitee.io/tags/nodejs/"/>
     
   </entry>
   

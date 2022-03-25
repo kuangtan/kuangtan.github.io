@@ -22,7 +22,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>微信小程序的理解 | kuangtant</title>
+  <title>初始花指令 | kuangtant</title>
 
   
     
@@ -551,7 +551,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/13.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/9.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>
@@ -562,7 +562,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['微信小程序的理解'],
+              strings: ['初始花指令'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -587,7 +587,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2022-02-26</span>
+        <span class="post-time">2022-03-25</span>
       </div>
       
       <div class="post-tags-categories">
@@ -595,12 +595,20 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/%E5%BE%AE%E4%BF%A1/" class="">
-              微信
+            <a href="/tags/tools/" class="">
+              tools
             </a>
           
-            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="">
-              小程序
+            <a href="/tags/C/" class="">
+              C
+            </a>
+          
+            <a href="/tags/%E7%AE%97%E6%B3%95/" class="">
+              算法
+            </a>
+          
+            <a href="/tags/%E5%8E%9F%E7%90%86/" class="">
+              原理
             </a>
           
         </div>
@@ -608,37 +616,92 @@
         
       </div>
       <div class="post-content">
-        <h1 id="微信小程序的理解"><a href="#微信小程序的理解" class="headerlink" title="微信小程序的理解"></a>微信小程序的理解</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我已经很久没有更新过文章了，其中有很大大一部分都和微信小程序有关，通过寒假，对微信小程序有了一些理解和看法，并且组队参加了一个有关微信小程序的互联网+的创新比赛，为了做足工作，把之前已经接近一年半多时间没有用过的<code>html</code>,<code>vue</code>等知识捡了回来。其次，为了更好更快的理解开发微信小程序，特别将 <a href="https://kuangtant.gitee.io/">https://kuangtant.gitee.io</a> ，也就是本文官网，开发改造了一下，未来不久，将会上线<code>Kuangtant for Wechat Mini Program</code>小程序，目前仍然还在测试阶段，可能很快就会上线和大家见面。（之所以这么慢，另一个原因是，互联网<code>＋</code>的小程序与之同步开发），下面讲讲一些关于这两款小程序开发，我的理解，和一些坑。</p>
-<h2 id="上手"><a href="#上手" class="headerlink" title="上手"></a>上手</h2><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><p>学习新的知识，一般来说，必不可少的就是有关的文档了，初识小程序，一定离不开的是 微信小程序开发文档 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/">微信开放文档 </a>，有了文档，就可以在微信小程序领域畅通无阻，其次，为了提高开发时的效率，肯定离不开的是微信小程序前端开源UI框架还有它的文档，常见的就是 <code>WeUi</code>,<code>vant app</code>,<code>colorUI</code>等，并且阅读他们的文档，可以轻松绘制UI界面</p>
-<h3 id="上手-1"><a href="#上手-1" class="headerlink" title="上手"></a>上手</h3><p>微信小程序的无非是从了解结构开始，一个微信小程序简单来说，无非就是包括<code>app.json</code>,<code>app.js</code>,<code>app.wxss</code>还有在page文件夹下的每一页面的<code>js</code>,<code>json</code>,<code>wxml</code>,<code>wxss</code>文件，其它的比较常用的就是项目配置文件，比如<code>project.config.json</code>等</p>
-<p>微信小程序和前端浏览器网页也开发差不多，主要的区别在微信小程序重写了<code>vue</code>的运行方法，<code>wxml</code>不支持很多的<code>html</code>标签，仅支持一些比如<code>text</code>,<code>view</code>等标签</p>
-<p>在微信小程序里面是，流程大概是先启动<code>app.js</code>里面的<code>App()</code>方法，每一页的<code>app.js</code>里面就是<code>Page()</code>方法，自然从里面的<code>onLoad</code>方法开始，然后依次调用各种方法，但是由于微信小程序没有提供<code>dom</code>进行操作，每次更新页面内容就必须使用<code>setData</code>方法，更改数据。页面开始之前，和vue一样，先得初始一些<code>data:&#123;key:&quot;vlule&quot;&#125;</code></p>
-<p>微信小程序为了更好的显示内容，微信小程序提供了<code>wx:for</code> , <code>wx:if</code> , <code>wx:key</code>等节点，来显示数据 </p>
-<h3 id="上手一般的问题"><a href="#上手一般的问题" class="headerlink" title="上手一般的问题"></a>上手一般的问题</h3><h4 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h4><p>微信原生的提供的是<code>bindtap</code>,比如，我开发过程中的一个例子</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">van-button</span> <span class="attr">size</span>=<span class="string">&quot;mini&quot;</span> <span class="attr">data-selectedId</span>=<span class="string">&quot;&#123;&#123;item&#125;&#125;&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;correctInfo&quot;</span> <span class="attr">round</span> <span class="attr">type</span>=<span class="string">&quot;info&quot;</span>&gt;</span>修改信息<span class="tag">&lt;/<span class="name">van-button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="初始花指令"><a href="#初始花指令" class="headerlink" title="初始花指令"></a>初始花指令</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在一般的逆向工程中，一般使用IDA进行逆向，比如，逆向一个exe文件，IDA会将exe的二进制字节码转换为汇编指令，如果想要汇编指令更易于理解，可以<code>F5</code>将汇编指令转换为c语言伪代码，但是有些程序开发者为了保护代码，不被逆向，所以采用花指令骗过IDA，使其不能正常还原为伪代码</p>
+<p>花指令是对抗反汇编的有效手段之一，正常代码添加了花指令之后，可以破坏静态反汇编的过程，使反汇编的结果出现错误。错误的反汇编结果会造成破解者的分析工作大量增加，进而使之不能理解程序的结构和算法，也就很难破解程序，从而达到病毒或软件保护的目的。</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="可执行花指令"><a href="#可执行花指令" class="headerlink" title="可执行花指令"></a>可执行花指令</h3><p>可执行式花指令指的是能够正常运行的但又不改变原始程序逻辑性的一组无用指令。这类花指令有如下特点：</p>
+<ul>
+<li><p>①可以正常运行；</p>
+</li>
+<li><p>②不改变任何寄存器的值；</p>
+</li>
+<li><p>③反汇编器可以正确反汇编该指令。</p>
+</li>
+</ul>
+<p>例如这样几组花指令就属于该类别：<code>PUSH EAX</code>＆<code>POP EAX</code>；<code>NOP</code>,<code>INC EAX</code>&amp;<code>DEC EAX</code>等等。这种类别的花指令组合形式很多，常常用在病毒代码的变形引擎中，病毒在传播时通过变形引擎随机产生一组该类别花指令并插入到病毒正常代码中，可以改变病毒的特征码，从而起到变形的作用。</p>
+<h3 id="不可执行花指令（垃圾指令）"><a href="#不可执行花指令（垃圾指令）" class="headerlink" title="不可执行花指令（垃圾指令）"></a>不可执行花指令（垃圾指令）</h3><p>   不可执行花指令，是指被插入到原始代码中但又不改变原始程序逻辑性的一组无用字节。这类花指令有如下特点：</p>
+<ul>
+<li><p>①不可以正常运行；</p>
+</li>
+<li><p>②不改变任何寄存器的值；</p>
+</li>
+<li><p>③反汇编器可能会错误反汇编这些字节。</p>
+<p>根据反汇编的工作原理，只有当花指令同正常指令的开始几个字节被反汇编器识别成一条指令时，才能有效破坏反汇编的结果。因此，插入的花指令应当是一些不完整的指令，被插入的不完整指令可以是随机选择的。正因为不可执行花指令有这些特点，该类花指令才能应用到软件保护中。</p>
+<p>Cullen等人指出为了能够有效“迷惑”静态反汇编工具，同时保证代码的正确运行，花指令必须满足两个基本特征，即：</p>
+<ul>
+<li>1)垃圾数据必须是某个合法指令的一部分：</li>
+<li>2)程序运行时，花指令必须位于实际不可执行的代码路径</li>
+</ul>
+</li>
+</ul>
+<h2 id="不可执行花指令的成功来自反汇编算法的缺陷"><a href="#不可执行花指令的成功来自反汇编算法的缺陷" class="headerlink" title="不可执行花指令的成功来自反汇编算法的缺陷"></a>不可执行花指令的成功来自反汇编算法的缺陷</h2><p>  当前静态分析中采用的反汇编算法主要可以分为2类：线性扫描算法与行进递归算法。</p>
+<h3 id="线性扫描反汇编算法"><a href="#线性扫描反汇编算法" class="headerlink" title="线性扫描反汇编算法"></a>线性扫描反汇编算法</h3><p>  线性扫描算法p1从程序的入口点开始反汇编，然后对整个代码段进行扫描，反汇编扫描过程中所遇到的每条指令。线性扫描算法的缺点在于在冯诺依曼体系结构下，无法区分数据与代码，从而导致将代码段中嵌入的数据误解释为指令的操作码，以致最后得到错误的反汇编结果。</p>
+<h3 id="行进递归反拒绾算法"><a href="#行进递归反拒绾算法" class="headerlink" title="行进递归反拒绾算法"></a>行进递归反拒绾算法</h3><p>  相比线性扫描算法，行进递归算法通过程序的控制流来确定反汇编的下一条指令，遇到非控制转移指令时顺序进行反汇编，而遇到控制转移指令时则从转移地址处开始进行反汇编。行进递归算法的缺点在于准确确定间接转移目的地址的难度较大。</p>
+<h2 id="典型花指令"><a href="#典型花指令" class="headerlink" title="典型花指令"></a>典型花指令</h2><p>一般花指令有很多种，下面给出一个典型</p>
+<h3 id="花指令程序"><a href="#花指令程序" class="headerlink" title="花指令程序"></a>花指令程序</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example1</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example2</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example3</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example4</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example5</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example6</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example7</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">example7_0</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> __declspec(naked)<span class="function">__cdecl <span class="title">cnuF</span><span class="params">(<span class="keyword">int</span>* a)</span><span class="comment">//裸函数，开辟和释放堆栈由我们自己写。</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">//55 8b ec 83</span></span><br><span class="line">	__asm</span><br><span class="line">	&#123;</span><br><span class="line">		push ebp</span><br><span class="line">		mov ebp, esp</span><br><span class="line">		sub esp, <span class="number">0x40</span></span><br><span class="line">		push ebx</span><br><span class="line">		push esi</span><br><span class="line">		push edi</span><br><span class="line">		mov eax, <span class="number">0xCCCCCCCC</span></span><br><span class="line">		mov ecx, <span class="number">0x10</span></span><br><span class="line">		lea edi, dword ptr ds : [ebp - <span class="number">0x40</span>]</span><br><span class="line">		rep stos dword ptr es : [edi]</span><br><span class="line">	&#125;</span><br><span class="line">	*a = <span class="number">1</span>;</span><br><span class="line">	_asm</span><br><span class="line">	&#123;</span><br><span class="line">		 call LABEL9;</span><br><span class="line">		 _emit <span class="number">0xE8</span>;</span><br><span class="line">		 _emit <span class="number">0x01</span>;</span><br><span class="line">		 _emit <span class="number">0x00</span>;</span><br><span class="line">		 _emit <span class="number">0x00</span>;</span><br><span class="line">		 _emit <span class="number">0x00</span>;</span><br><span class="line">				</span><br><span class="line">	 LABEL9:</span><br><span class="line">		 push eax;</span><br><span class="line">		 push ebx;</span><br><span class="line">		 lea  eax, dword ptr ds : [ebp - <span class="number">0x0</span>]</span><br><span class="line">		 add dword ptr ss : [eax<span class="number">-0x50</span>] , <span class="number">26</span>;</span><br><span class="line">		 </span><br><span class="line">		 pop eax;</span><br><span class="line">		 pop ebx;</span><br><span class="line">		 pop eax;</span><br><span class="line">		 jmp eax;</span><br><span class="line">		 __emit <span class="number">0xE8</span>;</span><br><span class="line">		 _emit <span class="number">0x03</span>;</span><br><span class="line">		 _emit <span class="number">0x00</span>;</span><br><span class="line">		 _emit <span class="number">0x00</span>;</span><br><span class="line">		 _emit <span class="number">0x00</span>;</span><br><span class="line">		 mov eax,dword ptr ss:[esp<span class="number">-8</span>];</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	__asm</span><br><span class="line">	&#123;</span><br><span class="line">		pop edi</span><br><span class="line">		pop esi</span><br><span class="line">		pop ebx</span><br><span class="line">		mov esp, ebp</span><br><span class="line">		pop ebp</span><br><span class="line">		ret</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	::MessageBox(<span class="literal">NULL</span>,<span class="string">&quot;花指令&quot;</span>,<span class="string">&quot;main&quot;</span>,<span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	example1();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;example1 : a = %d\n&quot;</span>,a);	</span><br><span class="line">	example2();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;example2 : a = %d\n&quot;</span>,a);</span><br><span class="line">	example3();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;example3 : a = %d\n&quot;</span>,a);</span><br><span class="line">	example4();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;example4 : a = %d\n&quot;</span>,a);</span><br><span class="line">	example5();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;example5 : a = %d\n&quot;</span>,a);</span><br><span class="line">	cnuF(&amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;cnuF : a = %d\n&quot;</span>,a);</span><br><span class="line">	example6();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;example6 : a = %d\n&quot;</span>,a);</span><br><span class="line">	example7();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;example7 : a = %d\n&quot;</span>,a);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	__asm &#123;</span><br><span class="line">	    <span class="keyword">xor</span> eax,eax</span><br><span class="line">	    test eax,eax </span><br><span class="line">	    je LABEL1 </span><br><span class="line">	    jne LABEL2</span><br><span class="line">LABEL2:   </span><br><span class="line">		_emit <span class="number">0x5e</span></span><br><span class="line">		<span class="keyword">and</span> eax,ebx</span><br><span class="line">		_emit <span class="number">0x50</span></span><br><span class="line">		<span class="keyword">xor</span> eax,ebx</span><br><span class="line">		_emit <span class="number">0x74</span></span><br><span class="line">		add eax,edx</span><br><span class="line"></span><br><span class="line">LABEL1:</span><br><span class="line">	&#125;</span><br><span class="line">	a=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	__asm &#123;</span><br><span class="line">		push eax;</span><br><span class="line">		<span class="keyword">xor</span> eax, eax;</span><br><span class="line">		test eax, eax;</span><br><span class="line">		jnz  LABEL1;</span><br><span class="line">		jz LABEL2;</span><br><span class="line">	LABEL1:</span><br><span class="line">		_emit <span class="number">0xE8</span>;</span><br><span class="line">	LABEL2:</span><br><span class="line">		mov byte ptr[a], <span class="number">0</span>;</span><br><span class="line">		call LABEL3;</span><br><span class="line">		_emit <span class="number">0xFF</span>;</span><br><span class="line">	LABEL3:</span><br><span class="line">		add dword ptr ss : [esp] , <span class="number">8</span>;</span><br><span class="line">		ret;</span><br><span class="line">		__emit <span class="number">0x11</span>;</span><br><span class="line">		mov byte ptr[a], <span class="number">2</span>;</span><br><span class="line">		pop eax;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example3</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	__asm &#123;</span><br><span class="line">		push ebx;</span><br><span class="line">		<span class="keyword">xor</span> ebx, ebx;</span><br><span class="line">		test ebx, ebx;</span><br><span class="line">		jnz LABEL5;</span><br><span class="line">		jz	LABEL6;</span><br><span class="line">	LABEL5:</span><br><span class="line">		_emit <span class="number">0x21</span>;</span><br><span class="line">	LABEL6:</span><br><span class="line">		pop ebx;</span><br><span class="line">	&#125;</span><br><span class="line">	a=<span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example4</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	 __asm &#123;</span><br><span class="line">		 push ebx;</span><br><span class="line">		 <span class="keyword">xor</span> ebx, ebx;</span><br><span class="line">		 test ebx, ebx;</span><br><span class="line">		 jnz LABEL7;</span><br><span class="line">		 jz	LABEL8;</span><br><span class="line">	 LABEL7:</span><br><span class="line">		 _emit <span class="number">0xC7</span>;</span><br><span class="line">	 LABEL8:</span><br><span class="line">		 pop ebx;</span><br><span class="line">	 &#125;</span><br><span class="line">	 a=<span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example5</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	 __asm &#123;</span><br><span class="line">		 call LABEL9;</span><br><span class="line">		 _emit <span class="number">0x83</span>;</span><br><span class="line">	 LABEL9:</span><br><span class="line">		 add dword ptr ss : [esp] , <span class="number">8</span>;</span><br><span class="line">		 ret;</span><br><span class="line">		 __emit <span class="number">0xF3</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	 a=<span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example6</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	::LoadLibrary(<span class="string">&quot;./hhhh&quot;</span>);<span class="comment">//函数返回值存储于eax中</span></span><br><span class="line">	_asm&#123;</span><br><span class="line">		cmp eax,<span class="number">0</span>;</span><br><span class="line">		jc LABEL6_1;</span><br><span class="line">		jnc LABEL6_2;</span><br><span class="line">	LABEL6_1:</span><br><span class="line">			_emit <span class="number">0xE8</span>;</span><br><span class="line">	LABEL6_2:</span><br><span class="line">	&#125;</span><br><span class="line">	a = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">example7</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	example7_0( <span class="number">0</span> );</span><br><span class="line">		_asm&#123;</span><br><span class="line">		cmp eax,<span class="number">0</span>;</span><br><span class="line">		jc LABEL7_1;</span><br><span class="line">		jz LABEL7_2;</span><br><span class="line">	LABEL7_1:</span><br><span class="line">			_emit <span class="number">0xE8</span>;</span><br><span class="line">	LABEL7_2:</span><br><span class="line">	&#125;</span><br><span class="line">	a = <span class="number">7</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">example7_0</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">if</span>(a&gt;<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">correctInfo</span>(<span class="params">e</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> d = e.currentTarget.dataset.selectedid;</span><br><span class="line">    <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">      goodsname: d.commodityName,</span><br><span class="line">      goodsdesc: d.commodityDetail,</span><br><span class="line">      goodsnum: d.commodityQuantity,</span><br><span class="line">      goodsprice: d.commodityPrice,</span><br><span class="line">      choicheId:d.id,</span><br><span class="line">      fileList: [],</span><br><span class="line">      upgoods: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">this</span>.iWillSell(&#123;</span><br><span class="line">      upgoods: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="最快解析html的方法"><a href="#最快解析html的方法" class="headerlink" title="最快解析html的方法"></a>最快解析html的方法</h4><p>在微信小程序解析html标签不是一件容易的事，一般可以参照xml的解析方法，解析dom,但是最后发现，解析读取html标签的方式，在微信小程序里最好的方法是正则表达式，有关复习正则的时候那叫一个痛苦，就不多说，具体就按照，下面代码改编</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">regx</span>(<span class="params">res, my_reg</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> data = [];</span><br><span class="line">    my_reg.lastIndex = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> tmp_reg;</span><br><span class="line">    <span class="keyword">while</span> ((tmp_reg = my_reg.exec(res)) != <span class="literal">null</span>) &#123;</span><br><span class="line">      data.push(tmp_reg[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用的时候按照一般数组格式，返回正则匹配到的数组</span></span><br><span class="line"><span class="built_in">this</span>.regx(res,<span class="regexp">/A([\s\S]*?)B/gmi</span>);</span><br></pre></td></tr></table></figure>
-
-<p>返回的是A-B的所有内容</p>
-<h4 id="展示html的内容"><a href="#展示html的内容" class="headerlink" title="展示html的内容"></a>展示html的内容</h4><p>现在解析html再显示在页面就必须使用一些插件，比如wxPrase.js但是，对于代码高亮等需求就必须自己拓展，改变代码，不太好实现，并且不支持插件拓展，还有一个问题，该插件的开发作者已经对该项目停止维护了，为了更好地解决用户需求，建议使用mp-html.js来实现，它的好处就不言而喻，在此提供以下两个项目的位置</p>
-<blockquote>
-<p>mp-html: 小程序富文本组件，支持渲染和编辑 html，支持在微信、QQ、百度、支付宝、头条和 uni-app 平台使用<a target="_blank" rel="noopener" href="https://gitee.com/jin-yufeng/mp-html/">https://gitee.com/jin-yufeng/mp-html/ </a></p>
-<p>wxParse:<a target="_blank" rel="noopener" href="https://github.com/icindy/wxParse">https://github.com/icindy/wxParse</a></p>
-</blockquote>
-<h4 id="有关前端与后端token验证"><a href="#有关前端与后端token验证" class="headerlink" title="有关前端与后端token验证"></a>有关前端与后端token验证</h4><p>设置了token的一般应该是放在header里面，由于第一次，姿势不对，我和后端多次交涉，最后有很大一部分的问题，实际写法应该如下</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">header: &#123;</span><br><span class="line">        Authorization: &quot;Bearer &quot; + app.globalData.token</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<p>如此一来，后端的解析完美通过</p>
-<h4 id="有关微信登录"><a href="#有关微信登录" class="headerlink" title="有关微信登录"></a>有关微信登录</h4><p>说到这，就必须说说，登录流程，必须先调用<code>wx.login</code>获得code上传到服务器，让服务器与微信服务端互交，然后使用获取<code>sessionId</code>,用于后面的业务，<code>wx.getUserProfile</code>弹出用户授权窗口，用于登录信息，唯一我踩得最深的坑，我就是将<code>wx.getUserProfile</code>写入了<code>wx.login</code>的<code>success</code>方法里面，一直请求不成功，过了很久，最后发现，<code>wx.getUserProfile</code>只能写在按钮点击事件里面进行交互，不然就会像我一样，一直调试，一直<code>fail</code></p>
-<p>所以，最有效的登录逻辑，就是，在打开用户登录页面，首先调用<code>wx.login</code>，最后在页面上写一个引导用户登录的按钮，用来调用<code>wx.getUserProfile</code></p>
-<h4 id="文件按序上传"><a href="#文件按序上传" class="headerlink" title="文件按序上传"></a>文件按序上传</h4><p>对于微信小程序的文件上传，最让人吐槽的是文件上传，调用 <code>wx.uploadFile</code>,每一次只能上传一个文件，多文件上传就必须多次调用该接口方法，依次文件上传就最好使用递归上传法，比如</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">upfile</span>(<span class="params">file, count</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> that = <span class="built_in">this</span>;</span><br><span class="line">    wx.uploadFile(&#123;</span><br><span class="line">      filePath: file[count],</span><br><span class="line">      name: <span class="string">&#x27;file&#x27;</span>,</span><br><span class="line">      url: <span class="built_in">this</span>.data.host + <span class="string">&quot;/commodity/insert/upload&quot;</span>,</span><br><span class="line">      header: &#123;</span><br><span class="line">        Authorization: <span class="string">&quot;Bearer &quot;</span> + app.globalData.token</span><br><span class="line">      &#125;,</span><br><span class="line">      method: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> res = <span class="built_in">JSON</span>.parse(res.data);</span><br><span class="line">        <span class="keyword">if</span> (res.succeed) &#123;</span><br><span class="line">          that.setData(&#123;</span><br><span class="line">            upedfile: [...that.data.upedfile, res.data]</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          Toast(res.message + res.code);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      fail: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        Toast(<span class="string">&quot;图片上传失败&quot;</span>);</span><br><span class="line">      &#125;,</span><br><span class="line">      complete: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (count == file.length - <span class="number">1</span>) &#123;</span><br><span class="line">          that.upData();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          that.upfile(file, count + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//以上只是参考，具体按照自己的需求实现</span></span><br><span class="line">upfile(fileList,<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="请求链接参数后端没收到，不齐全"><a href="#请求链接参数后端没收到，不齐全" class="headerlink" title="请求链接参数后端没收到，不齐全"></a>请求链接参数后端没收到，不齐全</h4><p>有这个问题，可能使用了get方法，出现这样的情况</p>
-<p>在其他http测试接口没问题，在微信小程序测试就有如上问题，就不妨将后端的get方法改为post请求，原因是url长度在微信小程序的长度有限制，不适合请求过长的url</p>
+<p>以上给了7个常见的花指令的源码，虽然花指令的原理差不多，但是能够让机器不能正常识别就行，好像有这样一句话，就是不影响程序运行，添加无效垃圾指令</p>
+<h3 id="去花"><a href="#去花" class="headerlink" title="去花"></a>去花</h3><p>在IDA打开这个程序，可以正常的生成没有添加花指令的main函数，但是在各大函数里面就别有洞天了</p>
+<p><img src="image-20220325160410277-16482037423101.png" alt="image-20220325160410277"></p>
+<h3 id="example1"><a href="#example1" class="headerlink" title="example1"></a>example1</h3><p>跟进<code>sub_40100F()</code>函数,直接出现了<code>JUMPOUT(0x401230)</code>的提示，显然就是因为花指令，IDA不能正常给出伪代码</p>
+<ul>
+<li><p><code>TAP</code>键，切换为汇编代码<img src="image-20220325161342607-16482037423112.png" alt="image-20220325161342607"></p>
+</li>
+<li><p>点击<code>00401258</code>,选中地址，<code>U</code>或<code>D</code>键将其转换为数据<img src="image-20220325162109853-16482037423114.png" alt="image-20220325162109853"></p>
+</li>
+<li><p>将<code>C2</code>改成<code>90</code>,<code>90</code>就是nop的字节码，可以Edit–patch program–change byte<img src="image-20220325163026149-16482037423113.png" alt="image-20220325163026149"></p>
+</li>
+<li><p>选中<code>00401258</code>，<code>C</code>键转换为指令，选中<code>040125A</code>,<code>C</code>键，将其还原为指令<img src="image-20220325163758514-16482037423115.png" alt="image-20220325163758514"></p>
+</li>
+</ul>
+<p>发现其依旧不能转换为伪代码</p>
+<ul>
+<li><p>原因在loc_401250里面也有问题，简单点，就是将其全部nop,改为90<img src="image-20220325164414637-16482037423116.png" alt="image-20220325164414637"></p>
+</li>
+<li><p>下面再<code>00401230</code>处<code>P</code>键，最后<code>F5</code>将其转换为伪代码<img src="image-20220325164947122-16482037423118.png" alt="image-20220325164947122"></p>
+</li>
+<li><p>最后<code>F5</code>的结果如下<img src="image-20220325165616433-16482037423117.png" alt="image-20220325165616433"></p>
+</li>
+</ul>
+<h3 id="example2"><a href="#example2" class="headerlink" title="example2"></a>example2</h3><p>跟进<code>sub_401014()</code>函数，也可以看到一个<code>JUMPOUT(0x401290);</code>的红色提示，那就需要分析汇编指令了</p>
+<ul>
+<li><p><code>Tab</code>键，查看汇编<img src="image-20220325170257391-164820374231110.png" alt="image-20220325170257391"></p>
+</li>
+<li><p>在<code>004012B1</code>处，<code>U</code>键，转换为数据<img src="image-20220325170837985-16482037423119.png" alt="image-20220325170837985"></p>
+</li>
+<li><p>在<code>004012B2</code>处<code>C</code>键，将<code>004012B2</code>处的内容识别为代码，而前一行<code>004012B1</code>就是垃圾数据，所以将<code>004012B1</code>和跳转这里的<code>jnz short near ptr unk_4012B1</code>的内容给nop掉，可仍然有问题<img src="image-20220325172152663-164820374231212.png" alt="image-20220325172152663"></p>
+</li>
+<li><p>将<code>004012B9</code>到<code>004012C4</code>的内容nop掉，发现还是有问题，结果是，在上一个retn指令后面有一个垃圾数据，<code>0x11</code>，所以将其nop掉，即可得结果<img src="image-20220325173616971-164820374231211.png" alt="image-20220325173616971"></p>
+</li>
+<li><p>然后在<code>00401290</code>处，先<code>U</code>键后<code>P</code>键，最后<code>F5</code>生成伪代码<img src="image-20220325173844628-164820374231213.png" alt="image-20220325173844628"></p>
+</li>
+</ul>
+<h3 id="example3"><a href="#example3" class="headerlink" title="example3"></a>example3</h3><p>跟进<code>sub_40102D()</code>函数，同样给了个<code>JUMPOUT(0x401300);</code>就没显示其它了，跟进汇编</p>
+<ul>
+<li><p><code>Tab</code>键，查看汇编<img src="image-20220325174512134-164820374231715.png" alt="image-20220325174512134"></p>
+</li>
+<li><p>在<code>00401321</code>处，<code>D</code>键，转换为数据<img src="image-20220325174900121-164820374231714.png" alt="image-20220325174900121"></p>
+</li>
+<li><p>然后将<code>0040131D</code>和<code>00401321</code>处的内容nop掉，并将<code>00401322</code>的内容<code>C</code>键识别为代码<img src="image-20220325175440429-164820374231716.png" alt="image-20220325175440429"></p>
+</li>
+<li><p>最后在<code>00401300</code>处，依次按<code>U</code>,<code>P</code>,<code>F5</code>键，最后得到伪代码<img src="image-20220325175659505-164820374231717.png" alt="image-20220325175659505"></p>
+</li>
+</ul>
+<h3 id="example4"><a href="#example4" class="headerlink" title="example4+"></a>example4+</h3><p>example4,5,6,7的花指令都大同小异，可以参照前面的方法自行去除</p>
+<h2 id="程序链接"><a href="#程序链接" class="headerlink" title="程序链接"></a>程序链接</h2><p>百度云链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1xs0lSZJWWcemTNdb1dcFjg">https://pan.baidu.com/s/1xs0lSZJWWcemTNdb1dcFjg</a> 提取码：kata</p>
+<p>阿里云链接：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/kawsoPvtHrJ">https://www.aliyundrive.com/s/kawsoPvtHrJ</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>花指令入门：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zixiaomuwu/article/details/52895488">https://blog.csdn.net/zixiaomuwu/article/details/52895488</a></p>
+<p>逆向之花：<a target="_blank" rel="noopener" href="https://the_itach1.gitee.io/2020/12/18/%E8%8A%B1%E6%8C%87%E4%BB%A4/">https://the_itach1.gitee.io/2020/12/18/%E8%8A%B1%E6%8C%87%E4%BB%A4/</a></p>
+<p>反调试入门-花指令：<a target="_blank" rel="noopener" href="http://www.360doc.com/content/20/1208/20/71939662_950241977.shtml">http://www.360doc.com/content/20/1208/20/71939662_950241977.shtml</a></p>
 
       </div>
       
@@ -649,7 +712,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/02/26/wei-xin-xiao-cheng-xu-de-li-jie/" target="_blank" title="微信小程序的理解">https://kuangtant.gitee.io/2022/02/26/wei-xin-xiao-cheng-xu-de-li-jie/</a>
+    <a href="/2022/03/25/chu-shi-hua-zhi-ling/" target="_blank" title="初始花指令">https://kuangtant.gitee.io/2022/03/25/chu-shi-hua-zhi-ling/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -667,23 +730,6 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/9.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2022/03/25/chu-shi-hua-zhi-ling/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> 上一篇:
-        <div>初始花指令</div>
-      </div>
-      
-      <!-- <div class="content">
-        初始花指令前言在一般的逆向工程中，一般使用IDA进行逆向，比如，逆向一个exe文件，IDA会将exe的二进制字节码转换为
-      </div> -->
-    </a>
-  </div>
-
 
 
   
@@ -691,13 +737,13 @@
     <div class="post-nav-img lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2022/01/14/da-zao-android-zui-jian-dan-you-ya-de-linux-mian-ban/" class="post-nav-link">
+    <a href="/2022/02/26/wei-xin-xiao-cheng-xu-de-li-jie/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fa fa-angle-right"></i>
-        <div>打造Android最简单优雅的Linux面板</div>
+        <div>微信小程序的理解</div>
       </div>
       <!-- <div class="content">
-        打造Android最简单优雅的Linux面板前言都知道，Android是基于Linux，但在Android平台上，想要运
+        微信小程序的理解前言我已经很久没有更新过文章了，其中有很大大一部分都和微信小程序有关，通过寒假，对微信小程序有了一些理解
       </div> -->
     </a>
   </div>
