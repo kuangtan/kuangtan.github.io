@@ -6,7 +6,7 @@
   <link href="https://kuangtant.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://kuangtant.gitee.io/"/>
-  <updated>2022-03-25T10:28:23.158Z</updated>
+  <updated>2022-03-27T15:01:52.242Z</updated>
   <id>https://kuangtant.gitee.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RC4的加密与解密实现</title>
+    <link href="https://kuangtant.gitee.io/2022/03/27/rc4-de-jia-mi-yu-jie-mi-shi-xian/"/>
+    <id>https://kuangtant.gitee.io/2022/03/27/rc4-de-jia-mi-yu-jie-mi-shi-xian/</id>
+    <published>2022-03-27T14:51:01.000Z</published>
+    <updated>2022-03-27T15:01:52.242Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;RC4的加密与解密实现&quot;&gt;&lt;a href=&quot;#RC4的加密与解密实现&quot; class=&quot;headerlink&quot; title=&quot;RC4的加密与解密实现&quot;&gt;&lt;/a&gt;RC4的加密与解密实现&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C" scheme="https://kuangtant.gitee.io/tags/C/"/>
+    
+    <category term="Java" scheme="https://kuangtant.gitee.io/tags/Java/"/>
+    
+    <category term="算法" scheme="https://kuangtant.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="原理" scheme="https://kuangtant.gitee.io/tags/%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="密钥" scheme="https://kuangtant.gitee.io/tags/%E5%AF%86%E9%92%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>初始花指令</title>
@@ -486,31 +517,6 @@
     <category term="Linux" scheme="https://kuangtant.gitee.io/tags/Linux/"/>
     
     <category term="Mac" scheme="https://kuangtant.gitee.io/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown 的进修史</title>
-    <link href="https://kuangtant.gitee.io/2021/08/25/markdown-de-jin-xiu-shi/"/>
-    <id>https://kuangtant.gitee.io/2021/08/25/markdown-de-jin-xiu-shi/</id>
-    <published>2021-08-24T17:14:32.000Z</published>
-    <updated>2021-09-28T06:22:04.000Z</updated>
-    
-    
-    <summary type="html">markdown是一种轻量级的标记语言，在中国各大平台普遍受欢迎，且其编辑的文档可简易的导出为HTML,Word,PDF等多种文档格式，很有学习的必要。Markdown常被用来编写各样的文本,Markdown编辑器有很多</summary>
-    
-    
-    
-    <category term="Markdown" scheme="https://kuangtant.gitee.io/categories/Markdown/"/>
-    
-    
-    <category term="markdown" scheme="https://kuangtant.gitee.io/tags/markdown/"/>
-    
-    <category term="Typora" scheme="https://kuangtant.gitee.io/tags/Typora/"/>
-    
-    <category term="Markdown编辑器" scheme="https://kuangtant.gitee.io/tags/Markdown%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    
-    <category term="Quiver" scheme="https://kuangtant.gitee.io/tags/Quiver/"/>
     
   </entry>
   
