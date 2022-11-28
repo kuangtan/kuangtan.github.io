@@ -117,7 +117,7 @@
         base64.val(new Base64().encode(text.val(), table.val()));
       });
       baseToText.click(function () {
-        text.val(new Base64().decode(base64.val(), table.val()));
+        text.val(new Base64().encode(base64.val(), table.val()));
       });
       clear.eq(0).click(function () {
         text.val('');
